@@ -210,3 +210,59 @@ btnCart.addEventListener('click', () => {
 </body>
 
 </html>
+
+
+
+
+
+.titulo-precio-carrito{
+    font-size: 20px;
+  }
+  .precio-prducto-carrito {
+      font-weight: 700;
+      font-size: 20px;
+      margin-left: 10px
+  }
+  .cantidad-producto-carrito{
+   font-weight: 400;
+   font-size: 25px;
+  }
+  .cart-total{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      gap: 20px;
+  }
+  .cart-product{
+      display: flex;
+      align-items: center;
+      justify-content:space-between;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+      height:50px;
+  }
+  .cart-total h3{
+      font-size: 30px;
+      font-weight: 500;
+  
+  }
+  .total-pagar{
+      font-size: 20px;
+      font-weight: 700;
+  }
+  .contador-productos{
+      font-size: 12px;
+  } 
+  .hidden-car{
+      display:none ;
+  }
+  .reserva{
+      background-image: url(../multimedia/reserva.jpg);
+      background-size: cover;
+      min-height: 70vh;
+  }
+  .reser{
+      color: #000;
+  }
+  
+  
