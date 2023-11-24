@@ -106,15 +106,35 @@ verCarrito.addEventListener("click" , () =>{
   const modalHeader = document.createElement("div");
   modalHeader.className = "modalHeader"
   modalHeader.innerHTML = `
-  <h1 class = "modal-heade-title">carrito</h1>
+  <h2 class = "modal-heade-title">carrito</h2>
   `;
   modalContainer.append(modalHeader);
 
-  const modalbutton = document.createElement("h1");
+  const modalbutton = document.createElement("h2");
   modalbutton.innerText = "x";
   modalbutton.className = "modal-header-button";
+  modalbutton.addEventListener("click" , () => {
+    modalContainer.style.display = "none";
+  });
 
   modalHeader.append(modalbutton);
 
-  
+
+  carrito.forEach((product) => {
+    let carritoContent = document.createElement ("div");
+    carrito.className = "modal-content"
+    carritoContent.innerHTML = `
+    <img src ="${product.img}">
+    <h3>${product.nombre}</h3>
+    <p>${product.precio}$</p>
+    `;
+    modalContainer.append(carritoContent);
+  });
+  const total = carrito.reduce((acc,el) => acc + el.precio, 0);
+
+  const totalBuying = document.createElement("div");
+  totalBuying.className = "total-content"
+  totalBuying.innerHTML = `total a pagar : ${total}$`;
+  modalContainer.append(totalBuying);
+
 });
