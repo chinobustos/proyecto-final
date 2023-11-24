@@ -1,0 +1,212 @@
+const btnCart = document.querySelector('.container-icon')
+const containerCartProducts = document.querySelectorAll('.container-cart-products')
+btnCart.addEventListener('click', () => {
+    alert('funciona')
+    containerCartProducts.classList.toggle('.container-cart-products')
+})
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Nuestra Carta</title>
+</head>
+
+<body>
+    <header>
+        <h1> Nuestra Carta</h1>
+        <div class="container-icon">
+            <div class="container-cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon-cart"
+                viewBox="0 0 16 16">
+                <path
+                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z" />
+            </svg>
+            </div>
+            <div class="count-products">
+                <span id="contador-productos">0</span>
+            </div>
+            <div class="container-cart-products hidden-car">
+                <div class="cart-product">
+                    <div class="info-cart-product">
+                        <span class="cantidad-producto-carrito">1</span>
+                        <p class="titulo-producto-carrito">Cafe Capuccino</p>
+                        <span class="precio-producto-carrito">$1800</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon-close"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="cart-total">
+                    <h3>total</h3>
+                    <span class="total-pagar">$1800</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="contenedor-productos">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="1">
+                            <img class="producto-imagen" src="../multimedia/Cappuccino-1.png" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo"> Café Capuccino</h3>
+                                <p class="price">$1800</p>
+                                <button class="btn-car">Añadir al carrito</button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="2">
+                            <img class="producto-imagen" src="../multimedia/expreso.webp" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo"> Café Expreso</h3>
+                                <p class="price">$1300</p>
+                                <button>Añadir al carrito</button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="3">
+                            <img class="producto-imagen" src="../multimedia/mocca.jpg" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo"> Café Mocca</h3>
+                                <p class="price">$2000</p>
+                                <button>Añadir al carrito</button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="4">
+                            <img class="producto-imagen" src="../multimedia/macchiatto.webp" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo"> Café Macchiato</h3>
+                                <p class="price">$1900</p>
+                                <button>Añadir al carrito</button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="5">
+                            <img class="producto-imagen" src="../multimedia/chocolate.jpg" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo"> Chocolate Caliente</h3>
+                                <p class="price">$1400</p>
+                                <button>Añadir al carrito</button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="6">
+                            <img class="producto-imagen" src="../multimedia/frapuccino.avif" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo"> Café Fapuccino</h3>
+                                <p class="price">$1800</p>
+                                <button>Añadir al carrito</button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="8">
+                            <img class="producto-imagen" src="../multimedia/cafe con leche.jpg" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo"> Café con Leche</h3>
+                                <p class="price">$1600</p>
+                                <button>Añadir al carrito</button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="8">
+                            <img class="producto-imagen" src="../multimedia/submarino.jpeg" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo">Submarino</h3>
+                                <p class="price">$2800</p>
+                                <button>Añadir al carrito</button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="9">
+                            <img class="producto-imagen" src="../multimedia/desk.webp" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo"> Café Latte</h3>
+                                <p class="price">$1800</p>
+                                <button>Añadir al carrito</button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="10">
+                            <img class="producto-imagen" src="../multimedia/smoothie_pepino.jpg" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo">Licuado de frutilla</h3>
+                                <p class="price">$1300</p>
+                                <button>Añadir al carrito</button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="11">
+                            <img class="producto-imagen" src="../multimedia/zumo-de-manzana-y-pepino.jpg" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo">Jugo de manzana y pepino</h3>
+                                <p class="price">$1600</p>
+                                <button>Añadir al carrito </button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="item">
+                        <figure id="12">
+                            <img class="producto-imagen" src="../multimedia/Licuados.webp" alt="">
+                            <div class="info-product">
+                                <h3 class="producto-titulo">Licuado  de Banana</h3>
+                                <p class="price">$1800</p>
+                                <button>Añadir al carrito</button>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

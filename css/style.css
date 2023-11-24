@@ -289,3 +289,12 @@ img{
 .hidden-car{
     display:none ;
 }
+.reserva{
+    background-image: url(../multimedia/reserva.jpg);
+    background-size: cover;
+    min-height: 70vh;
+}
+.reser{
+    color: #000;
+}
+
