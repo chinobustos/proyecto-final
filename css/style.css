@@ -191,21 +191,25 @@ img{
     width: 100%;
     font-size: 18px;
 }
+.card button:hover{
+    color: grey;
+}
 
 /*modal-content*/
-.modal-Content{
-    width:80px;
+.modal-container{
+    width:80%;
     margin: 0 10%;
-    max-height: 88vh;
+    max-height:88vh;
     color: #fff;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.925);
     display: flex;
-    flex-direction: column;
     align-items: center;
+    text-align: center;
+    flex-direction: column;
     position: fixed;
     overflow: auto;
-    z-index: 9;
-    top: 12vh;
+    z-index:10;
+    top: 10vh;
     scrollbar-color: none;
 }
 .modal-container::-webkit-scrollbar{
@@ -214,15 +218,21 @@ img{
 .modal-header{
     display: flex;
     justify-content: space-around;
-    background: black;
-    color: #fff;
+    background: rgb(54, 31, 0);
     width: 100%;
 }
 .modal-header-title{
+    display: flex;
+    text-align: center;
     justify-content: center;
+    color: grey;
+    font-size:40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .modal-header-button{
     cursor: pointer;
+   color:grey;
+   font-size:25px;
 }
 .modal-container > .modal-content{
     display: flex;
@@ -242,3 +252,23 @@ img{
     text-align: center;
     padding-top: 20px;
 }
+.delete-product{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+.cantidad-carrito{
+    background-color:rgb(61, 35, 0) ;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+}
+
+

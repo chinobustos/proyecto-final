@@ -1,81 +1,96 @@
 const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
 const contenedorProductos = [
   {
     id: 1,
     nombre: "Café Capuccino",
     precio: 1800,
     img: "../multimedia/capuccino.jpg",
+    cantidad:1,
   },
   {
     id: 2,
     nombre: "Café Expreso",
     precio: 1300,
     img: "../multimedia/expreso.webp",
+    cantidad:1,
   },
   {
     id: 3,
     nombre: "Café Mocca",
     precio: 2000,
     img: "../multimedia/mocca.jpg",
+    cantidad:1,
   },
   {
     id: 4,
     nombre: "Café Macchiato",
     precio: 1900,
     img: "../multimedia/macchiatto.webp",
+    cantidad:1,
   },
   {
     id: 5,
     nombre: " Chocolate Caliente",
     precio: 1400,
     img: "../multimedia/chocolate.jpg",
+    cantidad:1,
   },
   {
     id: 6,
     nombre: "Café Fapuccino",
     precio: 1800,
     img: "../multimedia/frapuccino.avif",
+    cantidad:1,
   },
   {
     id: 7,
     nombre: "Café con Leche",
     precio: 1600,
     img: "../multimedia/cafe con leche.jpg",
+    cantidad:1,
   },
   {
     id: 8,
     nombre: "Submarino",
     precio: 2800,
     img: "../multimedia/submarino.jpeg",
+    cantidad:1,
   },
   {
     id: 9,
     nombre: "Café Latte",
     precio: 1800,
     img: "../multimedia/desk.webp",
+    cantidad:1,
   },
   {
     id: 10,
     nombre: "Licuado de frutilla",
     precio: 1300,
     img: "../multimedia/smoothie_pepino.jpg",
+    cantidad:1,
   },
   {
     id: 11,
     nombre: "Jugo de manzana y pepino",
     precio: 1600,
     img: "../multimedia/zumo-de-manzana-y-pepino.jpg",
+    cantidad:1,
   },
   {
     id: 12,
     nombre: "Licuado  de Banana",
     precio: 1800,
     img: "../multimedia/Licuados.webp",
+    cantidad:1,
   },
 ];
-let carrito= [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+
 contenedorProductos.forEach((product) => {
   let content = document.createElement("div");
   content.className = "card"
@@ -93,48 +108,31 @@ contenedorProductos.forEach((product) => {
    content.append(comprar);
 
    comprar.addEventListener("click", () =>{
-    carrito.push({
-      id : product.id,
-      img: product.img,
-      nombre: product.nombre,
-      precio: product.precio,
-    });
+
+    const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
+    if(repeat){
+      carrito.map((prod)=> {
+        if(prod.id = prod.id){
+          prod.cantidad++;
+        } 
+      });
+    } else{
+      carrito.push({
+        id : product.id,
+        img: product.img,
+        nombre: product.nombre,
+        precio: product.precio,
+        cantidad:product.cantidad,
+      });
+    }
     console.log(carrito);
+    carritoCounter();
+    saveLocal();
    });
 });
-verCarrito.addEventListener("click" , () =>{
-  const modalHeader = document.createElement("div");
-  modalHeader.className = "modalHeader"
-  modalHeader.innerHTML = `
-  <h2 class = "modal-heade-title">carrito</h2>
-  `;
-  modalContainer.append(modalHeader);
 
-  const modalbutton = document.createElement("h2");
-  modalbutton.innerText = "x";
-  modalbutton.className = "modal-header-button";
-  modalbutton.addEventListener("click" , () => {
-    modalContainer.style.display = "none";
-  });
-
-  modalHeader.append(modalbutton);
+const saveLocal = () =>{
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+};
 
 
-  carrito.forEach((product) => {
-    let carritoContent = document.createElement ("div");
-    carrito.className = "modal-content"
-    carritoContent.innerHTML = `
-    <img src ="${product.img}">
-    <h3>${product.nombre}</h3>
-    <p>${product.precio}$</p>
-    `;
-    modalContainer.append(carritoContent);
-  });
-  const total = carrito.reduce((acc,el) => acc + el.precio, 0);
-
-  const totalBuying = document.createElement("div");
-  totalBuying.className = "total-content"
-  totalBuying.innerHTML = `total a pagar : ${total}$`;
-  modalContainer.append(totalBuying);
-
-});
